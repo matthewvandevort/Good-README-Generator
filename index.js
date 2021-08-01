@@ -1,4 +1,5 @@
 // TODO: Include packages needed for this application
+const { error } = require('console');
 const fs = require('fs');
 const inquirer = require("inquirer");
 const generateMarkdown = require('./utils/generateMarkdown');
@@ -72,28 +73,15 @@ function writeToFile(fileName, data) {
 
 }
 
-// Function to write README file and get API call from GitHub
-inquirer
-    .prompt(questions)
-    .then(function(data){
-        const queryUrl = `https://api.github.com/users/${data.username}`;
-
-        axios.get(queryUrl).then(function(res) {
-            
-            const githubInfo = {
-                githubImage: res.data.avatar_url,
-                email: res.data.email,
-                profile: res.data.html_url,
-                name: res.data.name
-            };
-            
-        });
-
-});
-
-
+// TODO: Create a function to initialize app
 function init() {
-
+    inquirer.prompt(questions)
+        .then(function (data) {
+            writeToFile('generated-README.md', generateMarkdown(data));
+            console.log(data);
+        }).catch(function (err) {
+            console.error(err)
+        })    
 }
 
 init();
