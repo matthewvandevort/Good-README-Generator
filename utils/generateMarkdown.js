@@ -55,7 +55,7 @@ function generateMarkdown(answers, githubInfo) {
   ## GitHub
 
   ![Image of myself](${githubInfo.githubImage})
-  * ${githubInfo.nam}
+  * ${githubInfo.name}
   * [GitHub Profile](${githubInfo.profile})
   * <${githubInfo.email}>
 
