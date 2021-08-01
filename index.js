@@ -1,8 +1,7 @@
 // TODO: Include packages needed for this application
-const fs = require("fs");
-const inquirer = require('inquirer');
+const fs = require('fs');
+const inquirer = require("inquirer");
 const generateMarkdown = require('./utils/generateMarkdown');
-const axios = require("axios");
 
 console.log('Hello! Time to create a README.md file for your project!');
 
@@ -14,9 +13,10 @@ const questions = [
         message:'Please enter the title of your project.',
     },
     {
-        type: "input",
-        name: 'badge',
-        message:'Please enter the badge links that you want to use.',
+        type: "checkbox",
+        name: 'license',
+        message:'Please enter the license you widh to use.',
+        choices: ['Apache License 2.0', 'GNU Public License v3.0', 'Open Software License 3.0', 'MIT', 'Mozilla Public License 2.0'],
     },
     {
         type: "input",
@@ -32,12 +32,6 @@ const questions = [
         type: "input",
         name: 'usage',
         message:'How do you use this application?',
-    },
-    {
-        type: "input",
-        name: 'license',
-        message:'Please enter the license or the badge link that you want to use',
-        
     },
     {
         type: "input",
@@ -57,7 +51,7 @@ const questions = [
     {
         type: "input",
         name: 'githubUsername',
-        message:'Plese enter your GitHub Username',
+        message:'Plaese enter your GitHub Username',
     },
     {
         type: "input",
@@ -66,28 +60,35 @@ const questions = [
     },
 ];
 
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {
+    fs.writeFile(fileName, data, err => {
+      if (err) {
+        return console.error(err);
+      };
+    
+      console.log("New README file created with success!");
+    });
+
+}
+
 // Function to write README file and get API call from GitHub
 inquirer
     .prompt(questions)
-    .then(function(answers) {
-        const queryUrl = `https://api.github.com/users/${answers.username}`;
+    .then(function(data){
+        const queryUrl = `https://api.github.com/users/${data.username}`;
 
-        axios.get(queryUrl).then(function(response) {
-
+        axios.get(queryUrl).then(function(res) {
+            
             const githubInfo = {
-                githubImage: response.data.avatar_url,
-                profile: response.data.html_url,
-                name: response.data.name,
-                email: response.data.email
+                githubImage: res.data.avatar_url,
+                email: res.data.email,
+                profile: res.data.html_url,
+                name: res.data.name
             };
-        fs.writeFile('generated-README.md', generateMarkdown(answers, githubInfo), function (err){
-            if (err) {
-                throw err;
-            };
-
-            console.log('Your README.md file was created. Success!');
+            
         });
-    });
+
 });
 
 

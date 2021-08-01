@@ -1,25 +1,60 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+function renderLicenseBadge(license) {
+  switch (license) {
+    case 'Apache License 2.0':
+      return `![License](https://img.shields.io/badge/license-Apache%202.0-blue)`;
+      break;
+    case 'GNU Public License v3.0':
+      return `![License](https://img.shields.io/badge/license-GNU%20Pub%203.0-blue)`;
+      break;
+    case 'Open Software License 3.0':
+      return `![License](https://img.shields.io/badge/license-Open%20Software%203.0-brightgreen)`;
+      break;
+    case 'MIT':
+      return `![License](https://img.shields.io/badge/license-MIT-red)`;
+      break;
+    case 'Mozilla Public License 2.0':
+      return `![License](https://img.shields.io/badge/license-Mozilla%202.0-yellow)`;
+      break;
+  
+    default:
+      break;
+  }
+}
+function renderLicenseLink(license) {
+  switch (license) {
+    case 'Apache License 2.0':
+      return `![Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)`;
+      break;
+    case 'GNU Public License v3.0':
+      return `![GNU Public License v3.0](https://opensource.org/licenses/GPL-3.0)`;
+      break;
+    case 'Open Software License 3.0':
+      return `![Open Saftware License 3.0](https://opensource.org/licenses/OSL-3.0)`;
+      break;
+    case 'MIT':
+      return `![MIT License](https://opensource.org/licenses/MIT)`;
+      break;
+    case 'Mozilla Public License 2.0':
+      return `![Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)`;
+      break;
+  
+    default:
+      break;
+  }
+}
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(answers, githubInfo) {
+function generateMarkdown(data, githubInfo) {
 
   return `
-  # **${answers.title}**
+  # **${data.title}**
 
-  ${answers.badge}
+  ${renderLicenseBadge(data.license)}
 
   ## Description:
-  ${answers.description}
+  ${data.description}
 
   ![sceenshot](#)
 
@@ -35,32 +70,25 @@ function generateMarkdown(answers, githubInfo) {
   * [Questions](#Questions)
   
   ## Installation
-  ${answers.installation}
+  ${data.installation}
 
   ## Usage
-  ${answers.usage}
+  ${data.usage}
 
   ## License
-  ${answers.license}
+  ${renderLicenseLink(data.license)}
 
   ## Contributing
-  ${answers.contributing}
+  ${data.contributing}
 
   ## Tests
-  ${answers.tests}
+  ${data.tests}
 
   ## Repository
-  - [Project Repo](${answers.repo})
-
-  ## GitHub
-
-  ![Image of myself](${githubInfo.githubImage})
-  * ${githubInfo.name}
-  * [GitHub Profile](${githubInfo.profile})
-  * <${githubInfo.email}>
+  - [Project Repo](${data.repo})
 
   ## Questions
-  If you have any questions please send an e-mail to ${answers.questions} or visit to review code https://github.com/${answers.githubUsername}
+  If you have any questions please send an e-mail to ${data.questions} or visit to review code https://github.com/${data.githubUsername}
 
 `;
 }
