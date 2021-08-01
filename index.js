@@ -16,7 +16,7 @@ const questions = [
     {
         type: "input",
         name: 'badge',
-        message:'Please enter the title of your project.',
+        message:'Please enter the badge links that you want to use.',
     },
     {
         type: "input",
@@ -34,18 +34,10 @@ const questions = [
         message:'How do you use this application?',
     },
     {
-        type: "checkbox",
+        type: "input",
         name: 'license',
-        message:'What license do youwant to use?',
-        choices: [
-            'MIT',
-            'Creative Commons',
-            'Apache',
-            'European Union Public License 1.1',
-            'Open Software License 3.0',
-            'Mozilla Public License 2.0',
-            'ISC'
-        ],
+        message:'Please enter the license or the badge link that you want to use',
+        
     },
     {
         type: "input",
@@ -55,7 +47,7 @@ const questions = [
     {
         type: "input",
         name: 'tests',
-        message:'How do you test this project?',
+        message:'How do you test this project and enter the project tests.',
     },
     {
         type: "input",
@@ -67,17 +59,40 @@ const questions = [
         name: 'githubUsername',
         message:'Plese enter your GitHub Username',
     },
+    {
+        type: "input",
+        name: 'repo',
+        message:'Plese enter your repository link.',
+    },
 ];
 
-// TODO: Create a function to write README file
-inquirer.prompt(questions).then(answers => {
-    fs.writeFile('generated-README.md', generateMarkdown(answers),function (err){
-        console.log(err)
-    })
-})
+// Function to write README file and get API call from GitHub
+inquirer
+    .prompt(questions)
+    .then(function(answers) {
+        const queryUrl = `https://api.github.com/users/${answers.username}`;
 
-// TODO: Create a function to initialize app
-function init() {}
+        axios.get(queryUrl).then(function(response) {
 
-// Function call to initialize app
+            const githubInfo = {
+                githubImage: response.data.avatar_url,
+                profile: response.data.html_url,
+                name: response.data.name,
+                email: response.data.email
+            };
+        fs.writeFile('generated-README.md', generateMarkdown(answers, githubInfo), function (err){
+            if (err) {
+                throw err;
+            };
+
+            console.log('Your README.md file was created. Success!');
+        });
+    });
+});
+
+
+function init() {
+
+}
+
 init();
