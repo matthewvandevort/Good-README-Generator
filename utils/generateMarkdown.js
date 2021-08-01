@@ -12,7 +12,11 @@ function renderLicenseSection(license) {}
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(answers) {
-  return `# ${answers.title}
+
+  return `
+  # **${answers.title}**
+
+  ${answers.badge}
 
   ## Description:
   ${answers.description}
@@ -20,29 +24,42 @@ function generateMarkdown(answers) {
   ![sceenshot](#)
 
   ## Table of Contents:
-  * [1. Installation](#installation)
-  * [2. Usage](#usage)
-  * [3. License](license)
-  * [4. Contributing](#contributing)
-  * [5. Testing](#test)
-  * [6. Questions](#questions)
+  * [Description](#Description)
+  * [Installation](#Installation)
+  * [Usage](#Usage)
+  * [License](#License)
+  * [Contributing](#Contributing)
+  * [Testing](#Test)
+  * [Repository Link](#Repository)
+  * [GitHub Information](#GitHub)
+  * [Questions](#Questions)
   
-  ### 1. Installation
+  ## Installation
   ${answers.installation}
 
-  ### 2. Usage
+  ## Usage
   ${answers.usage}
 
-  ### 3. License
-  ${answers.license[0] || null}
+  ## License
+  ${answers.license}
 
-  ### 4. Contributing
+  ## Contributing
   ${answers.contributing}
 
-  ### 5. Tests
+  ## Tests
   ${answers.tests}
 
-  ### 6. Questions
+  ## Repository
+  - [Project Repo](${answers.repo})
+
+  ## GitHub
+
+  ![Image of myself](${githubInfo.githubImage})
+  * ${githubInfo.nam}
+  * [GitHub Profile](${githubInfo.profile})
+  * <${githubInfo.email}>
+
+  ## Questions
   If you have any questions please send an e-mail to ${answers.questions} or visit to review code https://github.com/${answers.githubUsername}
 
 `;
