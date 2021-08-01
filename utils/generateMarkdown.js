@@ -1,25 +1,26 @@
 function renderLicenseBadge(license) {
   switch (license) {
     case 'Apache License 2.0':
-      return `![License](https://img.shields.io/badge/license-Apache%202.0-blue)`;
+      return `![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)`;
       break;
     case 'GNU Public License v3.0':
-      return `![License](https://img.shields.io/badge/license-GNU%20Pub%203.0-blue)`;
+      return `![License](https://img.shields.io/badge/license-GNU%20Pub%203.0-blue.svg)`;
       break;
     case 'Open Software License 3.0':
-      return `![License](https://img.shields.io/badge/license-Open%20Software%203.0-brightgreen)`;
+      return `![License](https://img.shields.io/badge/license-Open%20Software%203.0-brightgreen.svg)`;
       break;
     case 'MIT':
-      return `![License](https://img.shields.io/badge/license-MIT-red)`;
+      return `![License](https://img.shields.io/badge/license-MIT-red.svg)`;
       break;
     case 'Mozilla Public License 2.0':
-      return `![License](https://img.shields.io/badge/license-Mozilla%202.0-yellow)`;
+      return `![License](https://img.shields.io/badge/license-Mozilla%202.0-yellow.svg)`;
       break;
   
     default:
       break;
   }
 }
+console.log(renderLicenseBadge);
 function renderLicenseLink(license) {
   switch (license) {
     case 'Apache License 2.0':
@@ -43,10 +44,8 @@ function renderLicenseLink(license) {
   }
 }
 
-
-
 // TODO: Create a function to generate markdown for README
-function generateMarkdown(data, githubInfo) {
+function generateMarkdown(data,) {
 
   return `
   # **${data.title}**
