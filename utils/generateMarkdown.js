@@ -15,12 +15,9 @@ function renderLicenseBadge(license) {
     case 'Mozilla Public License 2.0':
       return `![License](https://img.shields.io/badge/license-Mozilla%202.0-yellow.svg)`;
       break;
-  
-    default:
-      break;
   }
 }
-console.log(renderLicenseBadge);
+
 function renderLicenseLink(license) {
   switch (license) {
     case 'Apache License 2.0':
@@ -38,9 +35,6 @@ function renderLicenseLink(license) {
     case 'Mozilla Public License 2.0':
       return `![Mozilla Public License 2.0](https://opensource.org/licenses/MPL-2.0)`;
       break;
-  
-    default:
-      break;
   }
 }
 
@@ -54,8 +48,6 @@ function generateMarkdown(data) {
 
   ## Description:
   ${data.description}
-
-  ![sceenshot](#)
 
   ## Table of Contents:
   * [Description](#Description)
