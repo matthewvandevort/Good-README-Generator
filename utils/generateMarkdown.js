@@ -50,15 +50,15 @@ function generateMarkdown(data) {
   ${data.description}
 
   ## Table of Contents:
-  \n[Description](#Description)
-  \n[Installation](#Installation)
-  \n[Usage](#Usage)
-  \n[License](#License)
-  \n[Contributing](#Contributing)
-  \n[Testing](#Test)
-  \n[Repository Link](#Repository)
-  \n[GitHub Information](#GitHub)
-  \n[Questions](##Questions)
+  \n[Description](#description)
+  \n[Installation](#installation)
+  \n[Usage](#usage)
+  \n[License](#license)
+  \n[Contributing](#contributing)
+  \n[Testing](#tests)
+  \n[Repository Link](#repo)
+  \n[GitHub Information](#githubUsername)
+  \n[Questions](##questions)
   
   ## Installation
   ${data.installation}
