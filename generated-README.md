@@ -49,5 +49,5 @@ https://user-images.githubusercontent.com/82176811/128431160-ac709ed3-3610-4b5b-
 
 
   ## Questions
-  If you have any questions please send an e-mail to vandevortmatthew@gmail.com or visit to review code https://github.com/mattvandevort
+  If you have any questions please send an e-mail to vandevortmatthew@gmail.com or visit to review code https://github.com/matthewvandevort
 
