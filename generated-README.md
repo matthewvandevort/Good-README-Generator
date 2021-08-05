@@ -42,7 +42,10 @@
 
   ## Repository
   - [Project Repo](https://github.com/matthewvandevort/Good-README-Generator)
-  - [Video](Untitled_ Aug 5, 2021 6_21 PM.mp4)
+
+https://user-images.githubusercontent.com/82176811/128431160-ac709ed3-3610-4b5b-8399-2ef496e30027.mp4
+
+
 
 
   ## Questions
