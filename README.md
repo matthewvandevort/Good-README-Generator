@@ -1,7 +1,3 @@
-
-
-https://user-images.githubusercontent.com/82176811/128446339-9808d5cf-e28e-4623-a8cd-c9f38070bd13.mp4
-
 # **README Generator**
 
   ![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)
@@ -47,6 +43,10 @@ https://user-images.githubusercontent.com/82176811/128446339-9808d5cf-e28e-4623-
 
   ## Repository
   - [Project Repo](https://github.com/matthewvandevort/Good-README-Generator)
+
+
+https://user-images.githubusercontent.com/82176811/128446437-b2e9671e-e462-45bd-a8ed-66bddc5e23ea.mp4
+
 
   ## Questions
   If you have any questions please send an e-mail to vandevortmatthew@gmail.com  or visit to review code https://github.com/matthewvandevort
