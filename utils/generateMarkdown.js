@@ -61,10 +61,11 @@ function generateMarkdown(data) {
   ## Usage
   ${data.usage}
 
-  ## License
-  ${renderLicenseLink(data.license)}
+  ## License 
+  
+  This application is covered by the ${data.license} license.
 
-  ## Contributing
+  ## Contributing 
   ${data.contributing}
 
   ## Tests
