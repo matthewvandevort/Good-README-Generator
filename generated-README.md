@@ -32,7 +32,7 @@
   Just foolow the prompts to create a README.md file.
 
   ## License
-  ![Apache License 2.0](http://www.apache.org/licenses/LICENSE-2.0)
+  This application is covered by the Apache License 2.0 license.
 
   ## Contributing
   Matthew Vandevort
